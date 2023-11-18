@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AntDesign } from "@expo/vector-icons";
 import Dashboard from "./screens/Dashboard";
-import RecentEntrties from "./screens/RecentEntrties";
+import RecentEntrties from "./screens/WelcomeScreen";
 import ManageEntries from "./screens/ManageEntries";
 import { GlobalStyles } from "./constants/styles";
 import IconButton from "./components/UI/IconButton";
@@ -16,6 +16,7 @@ const BottomTab = createBottomTabNavigator();
 function ScreensOverview({ navigation }) {
   return (
     <BottomTab.Navigator
+      initialRouteName="DashboardScreen"
       screenOptions={{
         headerStyle: { backgroundColor: GlobalStyles.colors.primary500 },
         headerTintColor: "white",
@@ -60,12 +61,12 @@ export default function App() {
     <>
       <StatusBar style="light" />
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="ScreensOverview">
+        <Stack.Navigator initialRouteName="WelcomeScreen">
           <Stack.Screen
             name="WelcomeScreen"
             component={RecentEntrties}
             options={{
-              title: "My Recent Entries",
+              title: "Welcome",
               headerStyle: { backgroundColor: GlobalStyles.colors.primary500 },
               headerTintColor: "white",
             }}
