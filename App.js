@@ -60,9 +60,7 @@ export default function App() {
     <>
       <StatusBar style="light" />
       <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="ScreensOverview"
-        >
+        <Stack.Navigator initialRouteName="ScreensOverview">
           <Stack.Screen
             name="WelcomeScreen"
             component={RecentEntrties}
