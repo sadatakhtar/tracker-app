@@ -3,7 +3,7 @@ import React from "react";
 
 const ManageEntries = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>ManageEntries</Text>
     </View>
   );
@@ -11,4 +11,8 @@ const ManageEntries = () => {
 
 export default ManageEntries;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    padding: 24,
+  },
+});

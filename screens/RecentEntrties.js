@@ -3,7 +3,7 @@ import React from "react";
 
 const RecentEntrties = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>RecentEntrties</Text>
     </View>
   );
@@ -11,4 +11,8 @@ const RecentEntrties = () => {
 
 export default RecentEntrties;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    container: {
+        padding: 24
+    }
+});
