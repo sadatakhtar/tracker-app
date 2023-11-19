@@ -9,6 +9,8 @@ import RecentEntrties from "./screens/WelcomeScreen";
 import ManageEntries from "./screens/ManageEntries";
 import { GlobalStyles } from "./constants/styles";
 import IconButton from "./components/UI/IconButton";
+import { Provider } from "react-redux";
+import store from "./feature/store";
 
 const Stack = createNativeStackNavigator();
 const BottomTab = createBottomTabNavigator();
@@ -59,27 +61,31 @@ function ScreensOverview({ navigation }) {
 export default function App() {
   return (
     <>
-      <StatusBar style="light" />
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="WelcomeScreen">
-          <Stack.Screen
-            name="WelcomeScreen"
-            component={RecentEntrties}
-            options={{
-              title: "Welcome",
-              headerStyle: { backgroundColor: GlobalStyles.colors.primary500 },
-              headerTintColor: "white",
-            }}
-          />
-          <Stack.Screen
-            name="ScreensOverview"
-            component={ScreensOverview}
-            options={{
-              headerShown: false,
-            }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <Provider store={store}>
+        <StatusBar style="light" />
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName="WelcomeScreen">
+            <Stack.Screen
+              name="WelcomeScreen"
+              component={RecentEntrties}
+              options={{
+                title: "Welcome",
+                headerStyle: {
+                  backgroundColor: GlobalStyles.colors.primary500,
+                },
+                headerTintColor: "white",
+              }}
+            />
+            <Stack.Screen
+              name="ScreensOverview"
+              component={ScreensOverview}
+              options={{
+                headerShown: false,
+              }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </Provider>
     </>
   );
 }
