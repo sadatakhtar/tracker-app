@@ -8,7 +8,7 @@ const Dashboard = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text>Dashboard</Text>
-      <Text> Welcome {userNameRedux}</Text> 
+      <Text>Welcome to the dashboard {userNameRedux}</Text> 
     </View>
   );
 };

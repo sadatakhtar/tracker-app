@@ -18,11 +18,11 @@ const WelcomeScreen = ({ navigation }) => {
   }
   return (
     <View style={styles.container}>
-      <Text>WelcomeScreen</Text>
-      <Text>username & password</Text>
-      <TextInput placeholder="Name" onChangeText={handleName} />
+      <Text>Sign in</Text>
+      <TextInput placeholder="Username" onChangeText={handleName} />
+      <TextInput placeholder="Password" onChangeText={handleName} />
       <Button
-        title="Next"
+        title="Sign In"
         onPress={handleBtn}
       />
     </View>
