@@ -2,6 +2,8 @@ import { StyleSheet, Text, View, Button, TextInput } from "react-native";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setName } from "../feature/userJourney/UserSlice";
+import Input from "../components/UI/Input";
+
 
 const WelcomeScreen = ({ navigation }) => {
   const [username, setUserName] = useState("");
@@ -18,9 +20,14 @@ const WelcomeScreen = ({ navigation }) => {
   }
   return (
     <View style={styles.container}>
-      <Text>Sign in</Text>
-      <TextInput placeholder="Username" onChangeText={handleName} />
-      <TextInput placeholder="Password" onChangeText={handleName} />
+      <Input label="Username" textInputConfig={{
+        keyboardType: 'default',
+        onChangeText: handleName
+      }}/>
+      <Input label="Password" textInputConfig={{
+        keyboardType: 'default',
+        onChangeText: () => {}
+      }}/>
       <Button
         title="Sign In"
         onPress={handleBtn}
